@@ -5,7 +5,7 @@ This application was created so I could automatically check if more tickets beca
 
 I wanted something I could set to run periodically and notify me if more tickets became available.
 
-The application does not require a browser it uses htmlunit to navigate throug a target website and make a 'check' for something (in the sample given the presence of a 'buy tickets' button). The check could really be anything. Once found a note it made of the url and this will be assembled into an email sent to a number of recipients.
+The application does not require a browser it uses htmlunit to navigate through a target website and make a 'check' for something (in the sample given the presence of a 'buy tickets' button). The check could really be anything. Once found a note it made of the url and this will be assembled into an email sent to a number of recipients.
 
 It's totally over-engineered of course (you could probably do it in about 10 lines of perl no doubt) but that's not the point is it? 
 
