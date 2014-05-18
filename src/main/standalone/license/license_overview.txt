@@ -1,0 +1,4 @@
+This application makes use of the 3rd party libraries / applications outlined below.  The applicable licenses are noted beside each.
+
+Log4J		Apache
+JavaService	LGPL

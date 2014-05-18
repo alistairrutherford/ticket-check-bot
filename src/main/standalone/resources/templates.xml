@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templatedefinitions>
+    <list>
+        <templatedefinition name="availability" description="Availability Email" path="/templates/email.vtl" />
+    </list>
+</templatedefinitions>
