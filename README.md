@@ -62,13 +62,15 @@ Email
 
 You will need to fill in your gmail credentials in the application-live.properties file. I have put dummy placemarkers in for the moment. Since this will be running on your own machine noone is going to be able to access it. If they can access your machine to look at your gmail password in this file you are already stuffed!
 
+The application uses velocity as a template engine to build a notification email. The advantage of this is that the email layout is defined in the template and not hard-coded into the application. Take a look at the sample.
+
 Build And Run
 -------------
 The component uses Maven.
 
 To build issue the command line:
 
-  mvn install
+**mvn install**
   
 This will create a zip file of the component distribution. Unzip this file to your target machine and modify the properties to match your email etc.
 
