@@ -5,7 +5,7 @@ This application was created so I could automatically check a target website if 
 
 I wanted something I could set to run periodically and which would notify me by email.
 
-I initially started using selenium but soon realised that I didn't need a browser to navigate and scan a target sote so settled on htmlunit instead.
+I initially started using selenium but soon realised that I didn't need a browser to navigate and scan a target site so settled on htmlunit instead.
 
 The email component is setup to use gmail as a smtp gateway so you will need an gmail account with two-step validation switched off.
 
