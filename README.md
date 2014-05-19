@@ -20,23 +20,59 @@ It's totally over-engineered of course (you could probably do it in about 10 lin
 
 Modules
 -------
+
 A module subclasses from the ModuleBot class and implements the interface:
 
-public interface BotModule
-{
-	/**
-	 * Run module.
-	 * 
-	 */
-	public void run();
-
-	/**
-	 * Return list of valid links.
-	 * 
-	 * @return links.
-	 */
-	public List<String> getLinkStatus();
-}
+	public interface BotModule
+	{
+		/**
+		* Run module.
+		* 
+		*/
+		public void run();
+	
+		/**
+		* Return list of valid links.
+		* 
+		* @return links.
+		*/
+		public List<String> getLinkStatus();
+	}
 
 It is expected that the 'run' method will populate a list of URL's which are returned in the call to 'getLinkStatus'. The check to do this can be anything. In my sample I navigate to the gigsandtours website and look for the presence of a 'buy ticket' button. You could make it anything your were watching for.
+
+A module is added to run by the application by adding it to the loadModules method in the TicketBot class i.e.
+
+	/**
+	* Load site modules.
+	* 
+	* @param modules
+	* @param client
+	*/
+	private void loadModules(List<BotModule> modules, WebClient client)
+	{
+		modules.add(new ModuleGigsAndTours(client));
+	}
+
+This is the current definition which takes the custom module I wrote for checking the gigsandtours website.
+
+
+Email
+-----
+
+You will need to fill in your gmail credentials in the application-live.properties file. I have put dummy placemarkers in for the moment. Since this will be running on your own machine noone is going to be able to access it. If they can access your machine to look at your gmail password in this file you are already stuffed!
+
+Build And Run
+-------------
+The component uses Maven.
+
+To build issue the command line:
+
+  mvn install
+  
+This will create a zip file of the component distribution. Unzip this file to your target machine and modify the properties to match your email etc.
+
+
+For Windows there is a batch file for Linux a shell file. For Windows create a periodic task to run the batch file and for Linux setup a cron job.
+
 
