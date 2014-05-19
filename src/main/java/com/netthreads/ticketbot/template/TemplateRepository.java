@@ -20,7 +20,7 @@ import com.google.inject.Singleton;
 @Singleton
 public class TemplateRepository
 {
-	private static Logger log = LoggerFactory.getLogger(TemplateRepository.class);
+	private static Logger logger = LoggerFactory.getLogger(TemplateRepository.class);
 
 	public static final String DEFAULT_FILE_NAME = "templates.xml";
 
@@ -45,7 +45,7 @@ public class TemplateRepository
 	 */
 	public void load(String name) throws Exception
 	{
-		log.debug("Load template definitions..");
+		logger.debug("Load template definitions..");
 
 		Serializer serializer = new Persister();
 

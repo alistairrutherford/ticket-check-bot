@@ -26,7 +26,7 @@ import com.netthreads.ticketbot.template.TemplateService;
 @Singleton
 public class TicketBot
 {
-	private static final Logger LOG = LoggerFactory.getLogger(TicketBot.class);
+	private static final Logger logger = LoggerFactory.getLogger(TicketBot.class);
 	
 	private List<BotModule> modules;
 	
@@ -78,7 +78,7 @@ public class TicketBot
 	 */
 	private void loadModules(List<BotModule> modules, WebClient client)
 	{
-		modules.add(new ModuleGigsAndTours(webClient));
+		modules.add(new ModuleGigsAndTours(client));
 	}
 	
 	/**
@@ -115,7 +115,7 @@ public class TicketBot
 		// configured recipients.
 		if (validLinks.size() > 0)
 		{
-			LOG.info("Generating email with valid links");
+			logger.info("Generating email with valid links");
 			
 			EmailData emailData = buildEmailData(validLinks);
 			
@@ -125,7 +125,7 @@ public class TicketBot
 			}
 			else
 			{
-				LOG.error("Could not generate email.");
+				logger.error("Could not generate email.");
 			}
 			
 		}

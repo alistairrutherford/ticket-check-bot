@@ -17,7 +17,7 @@ import com.netthreads.ticketbot.module.ModuleGigsAndTours;
  */
 public class TestBot
 {
-	private static final Logger LOG = LoggerFactory.getLogger(TestBot.class);
+	private static final Logger logger = LoggerFactory.getLogger(TestBot.class);
 	
 	private static WebClient webClient = null;
 	
@@ -40,7 +40,7 @@ public class TestBot
 	@Test
 	public void testGigsAndTours()
 	{
-		LOG.info("Start...test");
+		logger.info("Start...test");
 		
 		ModuleGigsAndTours module = new ModuleGigsAndTours(webClient);
 		
@@ -56,7 +56,7 @@ public class TestBot
 		
 		junit.framework.Assert.assertNotNull(buttons);
 		
-		LOG.info("End..test");
+		logger.info("End..test");
 	}
 	
 }

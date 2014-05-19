@@ -69,6 +69,7 @@ public class TemplateServiceImpl implements TemplateService
 	 * Return template definition record.
 	 * 
 	 * @param name
+	 *            The name of template definition.
 	 */
 	public TemplateDefinition getDefinition(String name)
 	{

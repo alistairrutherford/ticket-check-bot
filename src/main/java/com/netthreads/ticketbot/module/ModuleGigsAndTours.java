@@ -16,20 +16,22 @@ import com.gargoylesoftware.htmlunit.html.HtmlPage;
 
 /**
  * Module to scan "gigs and tours" web-site for available tickets.
- *
+ * 
  */
 public class ModuleGigsAndTours implements BotModule
 {
 	private static final Logger LOG = LoggerFactory.getLogger(ModuleGigsAndTours.class);
 	
-	private static final String URL_LIST =	 "http://www.gigsandtours.com/tour/prince";
+	private static final String URL_LIST = "http://www.gigsandtours.com/tour/prince";
 	private static final String URL_LINK = "/event/prince";
-		
-	// private static final String URL_LIST = "http://www.gigsandtours.com/tour/kate-bush";
+	
+	// private static final String URL_LIST =
+	// "http://www.gigsandtours.com/tour/kate-bush";
 	// private static final String URL_LINK = "/event/kate-bush";
 	
-	//	private static final String URL_LIST =	 "http://www.gigsandtours.com/tour/little-mix";
-	//	private static final String URL_LINK = "/event/little-mix";
+	// private static final String URL_LIST =
+	// "http://www.gigsandtours.com/tour/little-mix";
+	// private static final String URL_LINK = "/event/little-mix";
 	
 	private static final String URL_HTTP = "http://";
 	private static final String ID_BUTTON_BUY_TICKETS = "buyTickets";
@@ -113,7 +115,10 @@ public class ModuleGigsAndTours implements BotModule
 	/**
 	 * Fetch links.
 	 * 
-	 * @return list of links.
+	 * @param page
+	 *            The target page.
+	 * 
+	 * @return List of links.
 	 */
 	private List<String> fetchLinks(HtmlPage page)
 	{
@@ -150,7 +155,6 @@ public class ModuleGigsAndTours implements BotModule
 	 * Find valid links.
 	 * 
 	 * @param pageLinks
-	 * @param homeURL
 	 * 
 	 * @return Map of URLS with target criteria.
 	 */
@@ -165,9 +169,8 @@ public class ModuleGigsAndTours implements BotModule
 			try
 			{
 				HtmlPage page = webClient.getPage(link);
-				
-				// Object button = page.getByXPath("//id='" +
-				// ID_BUTTON_BUY_TICKETS + "'");
+
+				// Look for 'buy tickets' button.
 				Object button = page.getElementById(ID_BUTTON_BUY_TICKETS);
 				
 				if (button != null)
