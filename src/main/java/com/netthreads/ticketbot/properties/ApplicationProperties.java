@@ -7,6 +7,9 @@ import com.google.inject.name.Named;
 /**
  * Simple application properties class.
  * 
+ * NOTE: IMHO It is better to collect application related properties into a singleton like this than have them spread
+ * all over the consuming classes. It is easier to map them into the application and handle property name changes. 
+ * 
  */
 @Singleton
 public class ApplicationProperties
@@ -24,7 +27,7 @@ public class ApplicationProperties
 	
 	
 	/**
-	 * We user GUICE to bind the properties loaded in our application module to our central properties singleton.
+	 * We use GUICE to bind the properties loaded in our application module to our central properties singleton.
 	 * 
 	 * @param sendMail
 	 * @param recipient
