@@ -64,6 +64,33 @@ You will need to fill in your gmail credentials in the application-live.properti
 
 The application uses velocity as a template engine to build a notification email. The advantage of this is that the email layout is defined in the template and not hard-coded into the application. Take a look at the sample.
 
+For example the velocity template code:
+
+
+	Ticket Availability Report
+	--------------------------
+	
+	Tickets are available for your target at the following links:
+	
+	#foreach($item in $links)
+	    Link: $item 
+	#end
+
+Results in the following type of email:
+
+
+	Ticket Availability Report
+	--------------------------
+
+	Tickets are available for your target at the following links:
+	
+	    Link: http://www.gigsandtours.com/event/prince-3rdeyegirl/lg-arena-the-nec-birmingham/788977
+	    Link: http://www.gigsandtours.com/event/prince-3rdeyegirl/lg-arena-the-nec/788977
+	    Link: http://www.gigsandtours.com/event/prince-3rdeyegirl/secc-the-sse-hydro-glasgow/788889
+	    Link: http://www.gigsandtours.com/event/prince-3rdeyegirl/secc-the-sse-hydro/788889
+	    Link: http://www.gigsandtours.com/event/prince-3rdeyegirl/first-direct-arena-leeds/788890
+	    Link: http://www.gigsandtours.com/event/prince-3rdeyegirl/first-direct-arena/788890
+	    
 Build And Run
 -------------
 The component uses Maven.
